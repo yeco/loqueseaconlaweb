@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<title>Data binding</title>
+	<style>
+		body{
+			padding:200px 
+		}
+		
+		input::after {
+			content: attr(data-value) '/' attr(max);
+			position: relative;
+			left: 135px;
+		}
+		</style>
+	<body>
+		<div class="demo">
+			<input type="range" min="0" max="100" value="0">
+		</div>
+		<script>
+		var input = document.querySelector('input');
+		input.dataset.value = input.value; // Set an initial value.
+		input.addEventListener('change', function(e) {
+		this.dataset.value = this.value;
+		});
+	</script></body>
+</html>
