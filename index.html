@@ -413,58 +413,7 @@ div:hover {
       </div>
     </article>
   </slide>
-
-  <slide hidden>
-    <hgroup>
-      <span>
-        <a href="http://webk.it/52162" class="bug"></a>
-        <a href="http://dev.w3.org/csswg/css3-images/#cross-fade-function" class="spec" title="Spec link" alt="Spec link"></a>
-      </span>
-      <h2>CSS Functions ( cont. )</h2>
-    </hgroup>
-    <article>
-    <p>cross-fade()</p>
-    <pre class="prettyprint" data-lang="css">
-background-image: <a data-tooltip-property="cross-fade" class="bold"></a>(url(first.png), url(second.png), 50%);
-@-webkit-keyframes fading {
-  0% { background-image: <a data-tooltip-property="cross-fade" class="bold"></a>(url(first.png), url(second.png), 0%); }
-  100% { background-image: <a data-tooltip-property="cross-fade" class="bold"></a>(url(first.png), url(second.png), 100%); }
-}
-</pre>
-    <p class="centered"><a href="http://peter.sh/files/examples/cross-fading.html" class="demo">Demo</a></p>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Prefixed in WebKit nightly/Chrome Canary: <code>-webkit-filter</code>.</li>
-        </ul>
-      </section>
-    </aside>
-    <hgroup>
-      <span>
-        <a href="http://webk.it/68469" class="bug" title="Bug link"></a>
-        <a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html" class="spec" title="Spec link"></a>
-      </span>
-      <h2>CSS Filter Effects</h2>
-    </hgroup>
-    <article>
-      <p>Apply filter effects to any DOM element:</p>
-      <pre class="prettyprint" data-lang="css">
-video, img {
-  <a data-tooltip-property="filter" class="bold"></a>: grayscale(0.5) blur(10px);
-}
-</pre>
-       <ul>
-         <li>Chrome needs <code>--enable-accelerated</code> flag for hardware accelerated content.</li>
-         <li>Good <a href="http://drublic.de/blog/effects-for-the-web/">blog post</a>.</li>
-       </ul>
-       <p class="centered"><a href="http://html5-demos.appspot.com/static/css/filters/index.html" class="demo">Demo</a> <a href="http://lab.simurai.com/stars/" class="demo">Demo2</a></p>
-    </article>
-  </slide>
-
+ 
   <slide class="can nobackground" data-body-class="binding">
     <article class="flexbox vcenter">
       <hgroup>
@@ -642,12 +591,6 @@ xhr.onload = function(e) {
 
 
 
-
-
-
-
-
-
 };
 
 xhr.send();
@@ -745,7 +688,7 @@ xhr.send();
     </hgroup>
     <article>
       <ul>
-        <li>Stored files/folders get their own ( <code>filesystem:</code> ) URL:</li>
+        <li>Los archivos guardados  obtienen su propio URL:</li>
       </ul>
       <pre class="centered" style="font-size:25px;">
 <b>filesystem:</b><b alt="Origin of the app" class="blue" data-tooltip="Origin of the app"><span class="property" style="color:inherit;">http://example.com</span></b>/<b alt="Type of storage used" class="red" data-tooltip="Type of storage used"><span class="property" style="color:inherit;">temporary</span></b>/<b alt="Path to the file/folder" class="green" data-tooltip="Path to the file/folder"><span class="property" style="color:inherit;">image.png</span></b>
@@ -790,32 +733,7 @@ xhr.send();
 </pre>
     </article>
   </slide>
- 
-
-  <slide hidden>
-    <hgroup>
-      <h2>filer.js ( <a href="https://github.com/ebidel/filer.js">github.com/ebidel/filer.js</a> )</h2>
-    </hgroup>
-    <article>
-      <p>Wrapper lib that implements common UNIX cmds (ls, cp, mv)</p>
-      <pre class="prettyprint" data-lang="js">
-<b>var filer = new Filer();</b>
-
-filer.<b>init</b>({persistent: false, size: 1024 * 1024}, function(fs) {...}, onError);
-
-filer.<b>ls</b>('path/to/some/dir/', function(entries) { ... }, onError);
-
-<b>filer.cp('file.txt', '/path/to/folder', 'newname.txt', function(entry) {
-  // entry.fullPath == '/path/to/folder/newname.txt'
-}, onError);</b>
-
-var b = new Blob(['body { color: red; }'], {type: 'text/css'});
-filer.<b>write</b>('styles.css', {data: b, type: b.type}, function(entry, writer) {
-    ...
-}, onError);
-</pre>
-    </article>
-  </slide>
+  
 
   <slide hidden class="fill nobackground" data-body-class="blueprint">
     <hgroup>
@@ -826,8 +744,8 @@ filer.<b>write</b>('styles.css', {data: b, type: b.type}, function(entry, writer
     </article>
   </slide>
 
-<!--
-  <slide>
+
+  <slide hidden>
     <hgroup>
       <h2>Soporte en Browsers</h2>
       <h3>Filesystem API</h3>
@@ -842,41 +760,8 @@ filer.<b>write</b>('styles.css', {data: b, type: b.type}, function(entry, writer
       </div>
     </article>
   </slide>
--->
+
  
-
-<!--
-  <slide>
-    <hgroup>
-      <h2>idb.filesystem.js</h2>
-    </hgroup>
-    <article>
-      <p class="centered"><a href="https://github.com/ebidel/idb.filesystem.js">github.com/ebidel/idb.filesystem.js</a></p>
-      <ul class="build">
-        <li>HTML5 Filesystem API shim library using IndexedDB</li>
-        <li>Means browsers that support IDB also support the Filesystem API!</li>
-      </ul>
-      <p class="centered build"><a href="http://html5-demos.appspot.com/static/filesystem/idb.filesystem.js/demos/playground/index.html" class="demo">Launch me in FF</a></p>
-    </article>
-  </slide>
--->
-
-  <slide hidden>
-    <hgroup>
-      <h2>Soporte en Browsers</h2>
-      <h3>HTML5 Filesystem API - thanks to <a href="https://github.com/ebidel/idb.filesystem.js">idb.filesystem.js</a> shim!</h3>
-    </hgroup>
-    <article class="flexbox vcenter" style="height:65%">
-      <div class="browser-support">
-        <img src="images/browser_logos/safari_logo.png">
-        <img src="images/chrome_logo.png" class="supported">
-        <img src="images/browser_logos/ff_logo.png" class="supported">
-        <img src="images/browser_logos/opera_logo.png">
-        <img src="images/browser_logos/ie10_logo.png" class="supported">
-      </div>
-    </article>
-  </slide>
-
 
   <slide class="can nobackground">
     <article class="flexbox vcenter">
@@ -1049,32 +934,7 @@ window.<a data-tooltip-property="postMessage" data-tooltip-support='["webkit"]' 
       </ul>
     </article>
   </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Examples</h2>
-    </hgroup>
-    <article>
-      <pre class="prettyprint" data-lang="js">
-var uint8Array = new Uint8Array(1024 * 1024 * 32); // 32MB
-
-// Fill'r up!
-for (var i = 0, len = uint8Array.length; i &lt; len; ++i) {
-  uint8Array[i] = i;
-}
-
-worker.<a data-tooltip-property="postMessage" data-tooltip-support='["webkit"]' data-tooltip-js class="bold"></a>(uint8Array, [uint8Array.buffer]);
-</pre>
-      <p>Pass multiple buffers at once and/or additional data:</p>
-      <pre class="prettyprint" data-lang="js">
-worker.<a data-tooltip-property="postMessage" data-tooltip-support='["webkit"]' data-tooltip-js class="bold"></a>({
-  view1: uInt8Array,
-  buffer2: anotherBuffer,
-  username: 'johndoe'
-}, [uInt8Array.buffer, anotherBuffer]);
-</pre>
-    </article>
-  </slide>
+ 
 
   <slide class="fill nobackground" data-body-class="blueprint">
     <hgroup>
@@ -1084,28 +944,7 @@ worker.<a data-tooltip-property="postMessage" data-tooltip-support='["webkit"]' 
       <a href="http://html5-demos.appspot.com/static/workers/transferables/index.html" class="previewframe"><iframe data-src="http://html5-demos.appspot.com/static/workers/transferables/index.html"></iframe></a>
     </article>
   </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Feature Detection</h2>
-    </hgroup>
-    <article>
-    <ul>
-      <li>Feature detecting is a PITA b/c of false positives.</li>
-      <li>If transferred, buffer's <code>.byteLength</code> goes to zero.</li>
-    </ul>
-    <pre class="prettyprint" data-lang="js">
-var ab = new ArrayBuffer(1);
-worker.<a data-tooltip-property="postMessage" data-tooltip-support='["webkit"]' data-tooltip-js class="bold"></a>(ab, [ab]);
-if (ab.byteLength) {
-  alert('Transferables are not supported in your browser!');
-} else {
-  // Transferables are supported.
-}
-</pre>
-    </article>
-  </slide>
-
+ 
   <slide>
     <hgroup>
       <h2>Soporte en Browsers</h2>
@@ -1314,86 +1153,10 @@ var analyser = ctx.createAnalyser();
 source.connect(analyser);
 analyser.connect(ctx.destination);
 </pre>
-      <p><!-- <b>Note</b>: There's no <code>source.noteOn(0)</code>.  -->Play/pause es controlado por el elemento <code>&lt;audio&gt;</code>.</p>
+      <p> Play/pause es controlado por el elemento <code>&lt;audio&gt;</code>.</p>
     </article>
   </slide>
-
-<!--
-  <slide hidden>
-    <hgroup>
-      <h2>Demos</h2>
-    </hgroup>
-    <article>
-    <ul>
-      <li><a href="http://www.technitone.com/">Technitone</a></li>
-      <li><a href="http://labs.dinahmoe.com/plink/">Plink</a></li>
-      <li><a href="http://static.echonest.com/BohemianRhapsichord/index.html">Bohemian Rhapsichord</a></li>
-      <li><a href="http://airtightinteractive.com/demos/js/reactive/">3D Audio Visualizer</a></li>
-      <li><a href="http://www.htmlfivewow.com/demos/hal/index.html">GAL 9000</a></li>
-      <li><a href="http://www.htmlfivewow.com/demos/audio-visualizer/index.html">HTML5Wow Visualizer</a></li>
-      <li><a href="http://alteredqualia.com/three/examples/webgl_city.html">WebGL City</a></li>
-      <li><a href="http://www.iquilezles.org/apps/soundtoy/index.html">Sound Toy</a></li>
-    </ul>
-  </article>
-  </slide>
-
-
-  <slide hidden>
-    <aside class="note">
-      <section class="centered">
-        <p><img src="images/audio-routing-analysis.png" style="width:530px"></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Realtime Audio Processing</h2>
-    </hgroup>
-    <article class="smaller">
-    <pre class="prettyprint" data-lang="js">
-var ctx = new window.<b><a data-tooltip-property="AudioContext" data-tooltip-lowercase data-tooltip-support='["webkit"]' data-tooltip-js></a></b>();
-var analyser = <b>ctx.createAnalyser</b>();
-
-function initAudio(arrayBuffer) {
-  ctx.decodeAudioData(arrayBuffer, function(buffer) {
-    var src = ctx.createBufferSource();
-    src.buffer = buffer;
-    <b>src.connect(analyser);</b> // src -> analyser -> destination
-    <b>analyser.connect(ctx.destination);</b>
-    render(src);
-  }, function(e) {
-    console.log('Error decoding audio file', e);
-  });
-}
-
-function render(src) {
-  (function callback(timeStamp) {
-    <b>var byteData = new Uint8Array(analyser.frequencyBinCount);</b>
-    <b>analyser.getByteFrequencyData(byteData);</b>
-
-    // draw byteData to &lt;canvas&gt; visualization...
-
-    window.requestAnimationFrame(callback, src);
-  })();
-}
-</pre>
-  </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Soporte en Browsers</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <div class="browser-support">
-        <img src="images/browser_logos/safari_logo.png">
-        <img src="images/chrome_logo.png" class="supported">
-        <img src="images/browser_logos/ff_logo.png">
-        <img src="images/browser_logos/opera_logo.png">
-        <img src="images/browser_logos/ie10_logo.png">
-      </div>
-    </article>
-  </slide>
--->
-
+ 
   <slide class="can nobackground" data-body-class="stream">
     <article class="flexbox vcenter">
       <hgroup>
@@ -1445,7 +1208,7 @@ socket.onmessage = function(e) {
     </article>
   </slide>
 
-  <slide hidden>
+  <slide>
     <hgroup>
       <h2>Soporte en Browsers</h2>
     </hgroup>
